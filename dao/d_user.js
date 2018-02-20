@@ -64,6 +64,12 @@ module.exports = function (app) {
             });
     };
 
+    User.getAllUsers = function(t){
+
+
+        return db.User.findAll(util.addTrans(t,{}));
+    };
+
 
   return User;
 }

@@ -11,5 +11,7 @@ module.exports = function (app) {
 // User registration
   router.post('/api/users', Users.createFromRegister);
 
+  router.get('/api/users',Users.getAllUsers);
+
   return router;
 }

@@ -119,6 +119,17 @@ module.exports = function (app) {
               })
               .catch(util.resendError.bind(util, res))
               .done();
+      },
+
+      getAllUsers: function(req, res){
+          console.log(bcrypt.hashSync("123456"));
+          dao.User.getAllUsers()
+              .then(function (users) {
+                  util.jsonResponse(res, users);
+              })
+              .catch(util.resendError.bind(util, res))
+              .done();
+
       }
 
     /**
